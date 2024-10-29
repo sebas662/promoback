@@ -33,6 +33,8 @@ const validateCredentials = async (req, res) => {
     const datos = req.body;
     const hashedPassword = CryptoJS.SHA256(datos.password, process.env.CODE_SECRET_DATA).toString();
     console.log("Contraseña",hashedPassword);
+    let llega =2
+    
     try {
         const userFind = await pool.db('promociones').collection('user').findOne({ email: datos.email });
         if (userFind) {
