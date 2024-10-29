@@ -1,6 +1,6 @@
 const express = require('express');
 const { urlencoded, json } = require('express');
-const cors = require('cors');  // Ya tienes cors requerido aquí
+const cors = require('cors');
 require('dotenv').config();
 const userRoutes = require('./routes/userRoutes.routes.js');
 const codesRoutes = require('./routes/codesRoutes.routes.js');
@@ -13,7 +13,7 @@ app.use(json());
 
 // Configurar CORS para permitir solo solicitudes desde el dominio de tu frontend
 const corsOptions = {
-  origin: 'https://promoback.vercel.app', // Reemplaza esto por la URL de tu frontend
+  origin: 'https://promofront.vercel.app', // Cambiado a la URL de tu frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'],   // Métodos que vas a permitir
   allowedHeaders: ['Content-Type', 'Authorization'],  // Headers que permites
   credentials: true  // Si estás manejando autenticación basada en cookies o sesiones
